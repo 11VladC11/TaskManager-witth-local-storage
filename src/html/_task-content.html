@@ -1,0 +1,161 @@
+<div class="taskManager__wrapper">
+	<div class="taskManager__content">
+		<div class="content__header">
+			<div class="header-title">
+				<h1>To do</h1>
+			</div>
+			<div class="header-theme">
+				<img data-src="@img/icon-sun.svg" alt="">
+			</div>
+		</div>
+		<div data-tabs class="tabs">
+			<div data-tabs-body class="tabs__content">
+				<div class="tabs__body first-tab">
+					<div class="content__form-control">
+						<ul class="tasks task-control">
+							<li>
+								<form class="task-form">
+									<input type="text" name="name" id="task-input" placeholder="e.g. go to gym" autocomplete="off">
+									<button type="submit" class="create-task">Create</button>
+								</form>
+							</li>
+							<div class="form-alert"></div>
+						</ul>
+					</div>
+					<div class="content__form-result">
+						<p class="loading-text">Loading...</p>
+						<ul class="tasks all-tasks">
+							<!-- <li> -->
+								<!-- <div class="task-info">
+									<div class="task-status">
+										<input id="checkbox" type="checkbox">
+										<label for="checkbox">
+											<div class="radio-check checked"></div>
+										</label>
+										<img class="checked" src="@img/icon-check.svg" alt="">
+									</div>
+									<div class="task-title checked">
+										Learn something new
+									</div>
+								</div>
+								<div class="singular-control">
+
+									<div class="edit-task">
+										<button class="task-edit">Edit</button>
+										<div class="content-task-edit">
+											<form class="single-task-form">
+												<h4>Edit Task</h4>
+												<div class="form-control">
+													<label>Task ID</label>
+													<p class="task-edit-id">6249a06af5354105dc2ced55</p>
+												</div>
+												<div class="form-control">
+													<label for="name">Name</label>
+													<input type="text" name="name" class="task-edit-name" autocomplete="off" />
+												</div>
+												<div class="form-control">
+													<label for="completed">Completed</label>
+													<div class="task-status">
+														<input id="checkbox" type="checkbox" name="completed" class="task-edit-completed ">
+														<label for="checkbox">
+															<div class="radio-check "></div>
+														</label>
+														<img src="@img/icon-check.svg" alt="">
+													</div>
+												</div>
+													<button type="submit" class="block btn task-edit-btn">Edit task</button>
+
+												<div class="edit-alert"></div>
+											</form>
+											<div class="close-task-edit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+												<path fill="#ffffff" fill-rule="evenodd"
+													d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z" />
+											</svg>
+											</div>
+										</div>
+									</div>
+									<div class="delete-task">
+										<button type="button" class="delete-btn" >
+											<img src="@img/icon-cross.svg" alt="">
+										</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="task-info">
+									<div class="task-status">
+										<input id="checkbox" type="checkbox">
+										<label for="checkbox">
+											<div class="radio-check"></div>
+										</label>
+										<img src="@img/icon-check.svg" alt="">
+									</div>
+									<div class="task-title">
+										Don't eat much callories
+									</div>
+								</div>
+								<div class="singular-control">
+								
+									<div class="edit-task">
+										<button class="task-edit">Edit</button>
+									</div>
+									<div class="delete-task">
+										<button type="button" class="delete-btn">
+											<img src="@img/icon-cross.svg" alt="">
+										</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="task-info">
+									<div class="task-status">
+										<input id="checkbox" type="checkbox">
+										<label for="checkbox">
+											<div class="radio-check"></div>
+										</label>
+										<img src="@img/icon-check.svg" alt="">
+									</div>
+									<div class="task-title">
+										Read ten pages
+									</div>
+								</div>
+								<div class="singular-control">
+								
+									<div class="edit-task">
+										<button class="task-edit">Edit</button>
+									</div>
+									<div class="delete-task">
+										<button type="button" class="delete-btn">
+											<img src="@img/icon-cross.svg" alt="">
+										</button>
+									</div>
+								</div>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+				<div class="tabs__body rewards-page">
+					Rewards page
+				</div>
+				<div class="tabs__body motivation-page">
+					Motivation page
+				</div>
+				<div class="tabs__body history-page">
+					Your history page
+				</div>
+			</div>
+			<div  class="task-navigation">
+				<div class="task-left"><span id="hmany">3</span> items left</div>
+				<nav data-tabs-titles data-da=".task-mobile-navigation,800" class="tabs__navigation">
+					<button type="button" class="tabs__title _tab-active">All</button>
+					<button type="button" class="tabs__title">Rewards</button>
+					<button type="button" class="tabs__title">Motivation</button>
+					<button type="button" class="tabs__title">Life Journey</button>
+				</nav>
+				<div class="clear-completed"><button>Clear Completed</button></div>
+			</div>
+			<div class="task-mobile-navigation"></div>
+		</div>
+		
+	</div>
+</div>
