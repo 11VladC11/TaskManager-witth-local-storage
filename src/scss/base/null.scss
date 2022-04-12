@@ -1,6 +1,6 @@
 :root{
 	@include adaptiveValue("font-size", 30, 18, 1920, 1201, 1);
-	@include adaptiveValue("font-size", 18, 12, 1200, 480, 1);
+	@include adaptiveValue("font-size", 18, 14, 1200, 480, 1);
 }
 * {
 	padding: 0px;
