@@ -15,7 +15,7 @@
 						<ul class="tasks task-control">
 							<li>
 								<form class="task-form">
-									<input type="text" name="name" id="task-input" placeholder="e.g. go to gym" autocomplete="off">
+									<input type="text" name="name" id="task-input" placeholder="e.g. go to gym" autocomplete="off" maxlength="25">
 									<button type="submit" class="create-task">Create</button>
 								</form>
 							</li>
@@ -152,7 +152,7 @@
 					<button type="button" class="tabs__title">Motivation</button>
 					<button type="button" class="tabs__title">Life Journey</button>
 				</nav>
-				<div class="clear-completed"><button>Clear Completed</button></div>
+				<div class="clear-completed" onclick="clearCompleted()"><button>Clear Completed</button></div>
 			</div>
 			<div class="task-mobile-navigation"></div>
 		</div>
