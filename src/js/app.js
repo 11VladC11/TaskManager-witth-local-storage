@@ -457,10 +457,14 @@ closeTaskEdit.forEach(function(i){
 	})
 })
 
+const clearCompleted = document.querySelector('button.clear-completed');
 
-
-const clearCompleted =()=>{
+clearCompleted.onclick = ()=>{
  localStorage.clear();
+window.location.reload();
 }
+// function clearCompleted(){
+//  localStorage.clear();
+// }
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
