@@ -456,15 +456,17 @@ closeTaskEdit.forEach(function(i){
 		i.parentElement.classList.remove('hidden')
 	})
 })
-
+//clear completed provizoriu function
 const clearCompleted = document.querySelector('button.clear-completed');
 
 clearCompleted.onclick = ()=>{
  localStorage.clear();
 window.location.reload();
 }
-// function clearCompleted(){
-//  localStorage.clear();
-// }
+
+//task Counter
+const taskCounter = document.querySelector('#hmany')
+const taskCrowd = allTasks.children.length;
+taskCounter.innerHTML = taskCrowd;
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
