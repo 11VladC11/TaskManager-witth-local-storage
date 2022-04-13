@@ -231,10 +231,35 @@ const allTasks = document.querySelector('.all-tasks');
 
 if(JSON.parse(localStorage.getItem("todoItemsTut")) !== null){
 	const taskID = id();
-	const taskStatus = 'off';
-
-
+	// const taskStatus ='off';
+	// console.log(taskStatus)
 	JSON.parse(localStorage.getItem('todoItemsTut')).map(todo=>{
+// 		const taskStatus = JSON.parse(localStorage.getItem("todoItemsTut")).map(obj => {
+// 			if(obj.id = todo.id){
+
+// 				if (obj.checked !== 'checked'){
+// 					return 'off';
+// 				}else{
+// 					return obj.checked
+// 				}
+				
+// 			}
+// })
+
+
+
+const taskStatusFunction =()=>{
+	if (todo.checked !== 'checked'){
+		return 'off';
+	}else{
+		return todo.checked
+	}
+}
+const taskStatus = taskStatusFunction();
+console.log(taskStatus)
+		
+
+
 		const li = document.createElement('li');
 		li.innerHTML = `
 		<div class="task-info" id="${todo.id}">
@@ -264,9 +289,9 @@ if(JSON.parse(localStorage.getItem("todoItemsTut")) !== null){
 							<label for="name">Name</label>
 							<input type="text" name="name" class="task-edit-name" autocomplete="off" placeholder="${todo.name}" />
 						</div>
-						<div class="form-control">
-							<label for="completed">Completed</label>
-							<div class="task-status">
+						<div class="form-cmpleted">Completed</label>
+							<div class="taontrol">
+							<label for="cosk-status">
 								<input id="checkbox" type="checkbox" name="completed" class="task-edit-completed ">
 								<label for="checkbox">
 									<div class="radio-check "></div>
@@ -358,75 +383,47 @@ taskForm.onsubmit = (e)=>{
 			}
 			
 			
-			// function addNewTask(id, name, checked){
-				// 	var showTasks = [];
-				// 	var task = {
-					// 		id: id,
-					// 		name:name,
-					// 		checked:checked
-					// 	};
-					// 	showTasks.push(task);
-// 	showTasks = showTasks.concat(JSON.parse(localStorage.getItem('showTasks')||'[]'));
-// 	console.log(showTasks);
-// 	localStorage.setItem("showTasks", JSON.stringify(showTasks));
-	
-// }
-// const id = ()=> {
-//   return Math.random()
-//     .toString(36)
-//     .substring(2, 24);
-// };
-// createTask.onclick = function (){
-// 	localStorage.clear()
-// 	var taskFormName = document.getElementById('task-input').value;
-// 	console.log(taskFormName)
-// 	addNewTask(id(), taskFormName, 'no')
-// // 	localStorage.id = JSON.stringify(id);
-// // var storedNames = JSON.parse(localStorage.id);
-// // console.log(storedNames)
-// Storage.prototype.setObj = function(key, obj) {
-//     return this.setItem(key, JSON.stringify(obj))
-// }
-// Storage.prototype.getObj = function(key) {
-//     return JSON.parse(this.getItem(key))
-// }
-// }
 
 
 
 
 
-// localStorage.removeItem('showList');
+// if(JSON.parse(localStorage.getItem('todoItemsTut'))===null)
+//edit tasks
+var retrievedData = localStorage.getItem('todoItemsTut');
+console.log(retrievedData)
+var editTask = JSON.parse(retrievedData)
+console.log(editTask)
+const specificObject = editTask.filter((e) => e.id == 'hqc9k6vz5h');
+//era ddd
+console.log(specificObject[0])
 
-// function addNewShow(titleArg, typeArg, genreArg, watchedArg) {
-//   var showList = [];
+const newArr = editTask.map(obj => {
+	if (obj.id == 'hqc9k6vz5h'){
+		return {...obj, name:'It works', checked:'checked'};
+	}
 
-//   var show = {
-//     title: titleArg,
-//     type: typeArg,
-//     genre: genreArg,
-//     watched: watchedArg
-//   };
-//   showList.push(show);
-//   showList = showList.concat(JSON.parse(localStorage.getItem('showList')||'[]'));
-//   console.log(showList);
+	return obj;
+})
+// window.location.reload()
+console.log(newArr)
 
 
-//   localStorage.setItem("showList", JSON.stringify(showList));
-// };
+function update (){
+localStorage.clear();
+localStorage.setItem('todoItemsTut' , JSON.stringify(newArr))
+}
 
-// addNewShow(1,2,3,4);
-// addNewShow(1,2,3,5);
-// addNewShow(1,2,3,6);
-// addNewShow(1,2,3,7);
+update()
 
-//////////
-// taskEdit.addEventListener('click',(e)=>{
-// 		contentEdit.classList.add('hidden')
-// })
-// closeTaskEdit.addEventListener('click',()=>{
-// 		contentEdit.classList.remove('hidden')
-// })
+//incercare de a schimba by the way nu uita sa pui query selector all ca tu pui la toate 
+const singleTaskForm = document.querySelector('.single-task-form');
+singleTaskForm.onsubmit =(e)=>{
+	e.preventDefault()
+	const taskEditName = document.querySelector('.task-edit-name').value;
+console.log(taskEditName)
+}
+
 
 const closeTaskEdit = document.querySelectorAll('.close-task-edit');
 const contentEdit = document.querySelectorAll('.content-task-edit')
