@@ -388,28 +388,28 @@ taskForm.onsubmit = (e)=>{
 
 // if(JSON.parse(localStorage.getItem('todoItemsTut'))===null)
 //edit tasks
-var retrievedData = localStorage.getItem('todoItemsTut');
-var editTask = JSON.parse(retrievedData)
-// const specificObject = editTask.filter((e) => e.id == 'hqc9k6vz5h');
-// console.log(specificObject[0])
+// var retrievedData = localStorage.getItem('todoItemsTut');
+// var editTask = JSON.parse(retrievedData)
+// // const specificObject = editTask.filter((e) => e.id == 'hqc9k6vz5h');
+// // console.log(specificObject[0])
 
-const newArr = editTask.map(obj => {
-	if (obj.id == 'hqc9k6vz5h'){
-		return {...obj, name:'It works', checked:'checked'};
-	}
+// const newArr = editTask.map(obj => {
+// 	if (obj.id == 'hqc9k6vz5h'){
+// 		return {...obj, name:'It works', checked:'checked'};
+// 	}
 
-	return obj;
-})
-// window.location.reload()
-console.log(newArr)
+// 	return obj;
+// })
+// // window.location.reload()
+// console.log(newArr)
 
 
-function update (){
-localStorage.clear();
-localStorage.setItem('todoItemsTut' , JSON.stringify(newArr))
-}
+// function update (){
+// localStorage.clear();
+// localStorage.setItem('todoItemsTut' , JSON.stringify(newArr))
+// }
 
-update()
+// update()
 
 //incercare de a schimba by the way nu uita sa pui query selector all ca tu pui la toate 
 const singleTaskForm = document.querySelectorAll('.single-task-form');
