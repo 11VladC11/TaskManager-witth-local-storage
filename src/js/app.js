@@ -275,11 +275,10 @@ console.log(taskStatus)
 			</div>
 		</div>
 		<div class="singular-control">
-
 			<div class="edit-task">
 				<button class="task-edit" id="${todo.id}">Edit</button>
-				<div class="content-task-edit">
-					<form class="single-task-form">
+				<div class="content-task-edit" >
+					<form class="single-task-form" >
 						<h4>Edit Task</h4>
 						<div class="form-control">
 							<label>Task ID</label>
@@ -287,20 +286,19 @@ console.log(taskStatus)
 						</div>
 						<div class="form-control">
 							<label for="name">Name</label>
-							<input type="text" name="name" class="task-edit-name" autocomplete="off" placeholder="${todo.name}" />
+							<input type="text" name="name" class="task-edit-name" autocomplete="off" value="${todo.name}" />
 						</div>
-						<div class="form-cmpleted">Completed</label>
-							<div class="taontrol">
-							<label for="cosk-status">
+						<div class="form-control">
+							<label for="completed">Completed</label>
+							<div class="task-status">
 								<input id="checkbox" type="checkbox" name="completed" class="task-edit-completed ">
 								<label for="checkbox">
-									<div class="radio-check "></div>
+									<div class="radio-check ${taskStatus}"></div>
 								</label>
-								<img src="img/icon-check.svg" alt="">
+								<img src="img/icon-check.svg" class="${taskStatus}" alt="">
 							</div>
 						</div>
 							<button type="submit" class="block btn task-edit-btn">Edit task</button>
-
 						<div class="edit-alert"></div>
 					</form>
 					<div class="close-task-edit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
@@ -391,12 +389,9 @@ taskForm.onsubmit = (e)=>{
 // if(JSON.parse(localStorage.getItem('todoItemsTut'))===null)
 //edit tasks
 var retrievedData = localStorage.getItem('todoItemsTut');
-console.log(retrievedData)
 var editTask = JSON.parse(retrievedData)
-console.log(editTask)
-const specificObject = editTask.filter((e) => e.id == 'hqc9k6vz5h');
-//era ddd
-console.log(specificObject[0])
+// const specificObject = editTask.filter((e) => e.id == 'hqc9k6vz5h');
+// console.log(specificObject[0])
 
 const newArr = editTask.map(obj => {
 	if (obj.id == 'hqc9k6vz5h'){
@@ -417,12 +412,53 @@ localStorage.setItem('todoItemsTut' , JSON.stringify(newArr))
 update()
 
 //incercare de a schimba by the way nu uita sa pui query selector all ca tu pui la toate 
-const singleTaskForm = document.querySelector('.single-task-form');
-singleTaskForm.onsubmit =(e)=>{
-	e.preventDefault()
-	const taskEditName = document.querySelector('.task-edit-name').value;
-console.log(taskEditName)
-}
+const singleTaskForm = document.querySelectorAll('.single-task-form');
+singleTaskForm.forEach(function(i){
+	i.addEventListener('submit',(e)=>{
+		const nameValue = i.children[2].children[1].value;
+		console.log('nameValue', nameValue)
+		
+
+		const checkedValue = i.children[3].children[1].children[2].className;
+		console.log('checkedValue', checkedValue)
+		
+
+
+		const idValue = i.parentElement.previousElementSibling.id;
+		console.log('idValue', idValue)
+
+		var retrievedData = localStorage.getItem('todoItemsTut');
+		var editTask = JSON.parse(retrievedData)
+
+		// const specificObject = editTask.filter((e) => e.id == 'hqc9k6vz5h');
+		// console.log(specificObject[0])
+
+		const newArr = editTask.map(obj => {
+			if (obj.id == idValue){
+				return {...obj, name:nameValue, checked:checkedValue};
+			}
+
+			return obj;
+		})
+		// window.location.reload()
+		console.log(newArr)
+
+
+		function update (){
+		localStorage.clear();
+		localStorage.setItem('todoItemsTut' , JSON.stringify(newArr))
+		}
+
+		update();
+		
+
+		
+		
+	})
+	
+})
+
+
 
 
 const closeTaskEdit = document.querySelectorAll('.close-task-edit');
@@ -465,5 +501,30 @@ window.location.reload();
 const taskCounter = document.querySelector('#hmany')
 const taskCrowd = allTasks.children.length;
 taskCounter.innerHTML = taskCrowd;
+
+
+
+const allCheckBoxes = document.querySelectorAll('.edit-task #checkbox');
+// console.log(allCheckBoxes)
+allCheckBoxes.forEach(function(i){
+	i.addEventListener('click',()=>{
+		const radioCheck = i.nextElementSibling.children;
+		// console.log('radioCheck', radioCheck[0])
+		const imgCheck = i.nextElementSibling.nextElementSibling;
+		// console.log('imgCheck', imgCheck)
+		if(radioCheck[0].classList.contains('checked')){
+			radioCheck[0].classList.remove('checked')
+			imgCheck.classList.remove('checked')
+			imgCheck.classList.add('off')
+		}else{
+			radioCheck[0].classList.add('checked')
+			imgCheck.classList.remove('off')
+			imgCheck.classList.add('checked')
+		}
+		
+		
+	})
+})
+
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
