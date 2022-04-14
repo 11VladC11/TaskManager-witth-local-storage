@@ -1,8 +1,8 @@
 :root{
 	@include adaptiveValue("font-size", 30, 18, 1920, 1201, 1);
-	@include adaptiveValue("font-size", 18, 16, 1200, 500, 1);
-	@media (max-width:499px) {
-		@include adaptiveValue("font-size", 16, 14, 499, 480, 1);
+	@include adaptiveValue("font-size", 18, 16, 1200, 400, 1);
+	@media (max-width: 400px) {
+	@include adaptiveValue("font-size", 15.5, 14, 399, 320, 1);
 	}
 }
 * {
