@@ -252,11 +252,11 @@ const taskStatusFunction =()=>{
 	if (todo.checked !== 'checked'){
 		return 'off';
 	}else{
-		return todo.checked
+		return todo.checked;
 	}
 }
 const taskStatus = taskStatusFunction();
-console.log(taskStatus)
+// console.log(taskStatus)
 		
 
 
@@ -316,7 +316,7 @@ console.log(taskStatus)
 				</div>
 				`
 				
-				console.log(li)
+				// console.log(li)
 				allTasks.append(li)
 });
 }
@@ -324,7 +324,7 @@ console.log(taskStatus)
 //removing tasks from list and local storage
 
 const inputs = document.querySelectorAll('.delete-btn')
-console.log(inputs)
+// console.log(inputs)
 for(let i=0;i<inputs.length;i++){
 	inputs[i].addEventListener("click",(e)=>{
 		console.log(e.target.parentElement.id)	
@@ -489,13 +489,46 @@ closeTaskEdit.forEach(function(i){
 		i.parentElement.classList.remove('hidden')
 	})
 })
+
+
+
+
+
+
+
+
 //clear completed provizoriu function
 const clearCompleted = document.querySelector('button.clear-completed');
-
 clearCompleted.onclick = ()=>{
- localStorage.clear();
-window.location.reload();
-}
+var retrievedData = localStorage.getItem('todoItemsTut');
+var editTask = JSON.parse(retrievedData)
+		const newArr = editTask.map(obj => {
+			if (obj.checked == 'off'){
+				return obj;
+			}
+			return;
+		})
+		const filtered = newArr.filter(e => e != null);
+		function update (){
+		localStorage.clear();
+		localStorage.setItem('todoItemsTut' , JSON.stringify(filtered))
+		}
+		update();
+		window.location.reload();
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //task Counter
 const taskCounter = document.querySelector('#hmany')
