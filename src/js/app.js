@@ -445,7 +445,8 @@ singleTaskForm.forEach(function(i){
 
 
 		function update (){
-		localStorage.clear();
+		localStorage.removeItem('todoItemsTut');
+
 		localStorage.setItem('todoItemsTut' , JSON.stringify(newArr))
 		}
 
@@ -510,7 +511,7 @@ var editTask = JSON.parse(retrievedData)
 		})
 		const filtered = newArr.filter(e => e != null);
 		function update (){
-		localStorage.clear();
+		localStorage.removeItem('todoItemsTut');
 		localStorage.setItem('todoItemsTut' , JSON.stringify(filtered))
 		}
 		update();
@@ -560,7 +561,28 @@ allCheckBoxes.forEach(function(i){
 })
 
 
+const body = document.body;
+const bodyClass = document.body.className;
+const themeButton = document.querySelectorAll('.header-theme img')
+function theTheme(){
+	if(!localStorage.getItem('appTheme')){
+		localStorage.setItem('appTheme', 'dark');
+	}
+		const lsTheme = localStorage.getItem('appTheme')
+		body.classList.add(lsTheme)
+	
+}
+theTheme();
 
+themeButton.forEach(function(i){
+	i.addEventListener('click',()=>{
+		// body.classList.remove('dark')
+		// console.log(i.classList[0])
+		localStorage.removeItem('appTheme')
+		localStorage.setItem('appTheme', i.classList[0]);
+		window.location.reload()
+	})
+})
 
 
 
