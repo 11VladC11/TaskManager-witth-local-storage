@@ -560,7 +560,7 @@ allCheckBoxes.forEach(function(i){
 	})
 })
 
-
+//theme changer
 const body = document.body;
 const bodyClass = document.body.className;
 const themeButton = document.querySelectorAll('.header-theme img')
@@ -583,9 +583,19 @@ themeButton.forEach(function(i){
 		window.location.reload()
 	})
 })
+//sky theme updated
+const rphone = document.querySelector('.rphone');
+const wphone = document.querySelector('.wphone');
+const iosphone = document.querySelector('.iosphone');
 
-
-
+function skyTheme(){
+	if(body.className == 'dark'){
+		rphone.setAttribute("content", "#25273c")
+		wphone.setAttribute("content", "#25273c")
+		iosphone.setAttribute("content", "#25273c")
+	}
+}
+skyTheme();
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
 
