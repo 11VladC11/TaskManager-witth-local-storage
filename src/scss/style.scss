@@ -78,6 +78,9 @@ body {
 	// .loaded & {
 	// }
 	background-color: $VeryDarkBlue;
+	&.light{
+	background-color: $VeryLightGrayishBlue;
+	}
 }
 
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
@@ -156,3 +159,307 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+
+//
+.dark{
+
+	.header-title {
+		h1 {
+			color: $VeryLightGray;
+		}
+	}
+
+	ul.tasks {
+	background-color: $VeryDarkDesaturatedBlue;
+	li {
+		color: $VeryLightGray;
+	}
+}
+
+ul.task-control {
+	li {
+		form {
+			input {
+				color: $VeryLightGray;
+			}
+			button {
+				color: $VeryLightGray;
+			}
+		}
+	}
+}
+
+.content__form-result {
+	.loading-text {
+		color: $VeryLightGray;
+	}
+	ul {
+		li {
+			border-bottom: 1px solid $VeryDarkGrayishBlue;
+			.singular-control {
+				.edit-task {
+					.content-task-edit {
+						background-color: $VeryDarkDesaturatedBluePopup;
+						.task-edit-btn {
+							border: 1px solid $VeryLightGray;
+						}
+						.task-edit-name {
+							border: 1px solid $VeryLightGray;
+							background-color: $VeryDarkDesaturatedBlue;
+							color: $VeryLightGray;
+						}
+						.task-status {
+							&:hover .radio-check {
+								border: 1px solid #C058F3;
+								@media (max-width:1000px) {
+									border: 1px solid $VeryLightGray;
+								}
+							}
+							.radio-check {
+								border: 1px solid $VeryLightGray;
+								&.checked {
+									background: linear-gradient(#57DDFF, #C058F3);
+								}
+							}
+						}
+					}
+				}
+			}
+			.task-info {
+				.task-status {
+					.radio-check {
+						border: 1px solid $VeryDarkGrayishBlue;
+						&.checked {
+							background: linear-gradient(#57DDFF, #C058F3);
+						}
+						&.completed {
+							background: linear-gradient(#57DDFF, #C058F3);
+						}
+					}
+				}
+				.task-title {
+					&.checked {
+						color: $VeryDarkGrayishBlueTxt;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.tabs {
+	.task-navigation {
+		background-color: $VeryDarkDesaturatedBlue;
+		.tabs__navigation {
+			button {
+				color: $VeryDarkGrayishBlueTxt;
+				&:hover {
+					color: $VeryLightGray;
+				}
+			}
+			._tab-active {
+				color: $BrightBlue;
+				&:hover {
+					color: $BrightBlue;
+				}
+			}
+		}
+		.clear-completed {
+			button {
+				color: $VeryLightGray;
+			}
+		}
+		.task-left {
+			color: $VeryLightGray;
+		}
+	}
+	.task-mobile-navigation {
+		background-color:$VeryDarkDesaturatedBlue;
+		.tabs__navigation {
+			button {
+				color: $VeryDarkGrayishBlueTxt;
+				&:hover {
+					color: $VeryLightGray;
+				}
+			}
+			._tab-active {
+				color: $BrightBlue;
+				&:hover {
+					color: $BrightBlue;
+				}
+			}
+		}
+	}
+}
+.header-theme {
+	.moon {
+		display: none;
+	}
+}
+.background-setting {
+	.light {
+		display: none;
+	}
+}
+}
+///////////////////////////////////////////////////////
+
+
+.light {
+
+	
+	.header-title {
+	h1 {
+		color: $VeryLightGray;
+	}
+}
+
+ul.tasks {
+	background-color: $VeryLightGrayishBlue;
+	li {
+		color: $VeryDarkBlue;
+	}
+}
+
+ul.task-control {
+		box-shadow: 0 1px 6px -2px lightgray;
+	li {
+		form {
+			input {
+				color: $VeryDarkBlue;
+			}
+			button {
+				color: $VeryDarkBlue;
+			}
+		}
+	}
+}
+
+.content__form-result {
+	.loading-text {
+		color: $VeryDarkBlue;
+	}
+	ul {
+		box-shadow: 0 10px 5px -2px lightgray;
+		li {
+			
+			border-bottom: 1px solid lightgray;
+			.singular-control {
+				.edit-task {
+					.content-task-edit {
+						background-color: $VeryLightGrayishBluePopup;
+						.task-edit-btn {
+							border: 1px solid $VeryDarkBlue;
+						}
+						.task-edit-name {
+							border: 1px solid $VeryDarkBlue;
+							background-color: $VeryLightGrayishBlue;
+							color: $VeryDarkBlue;
+						}
+						.task-status {
+							&:hover .radio-check {
+								border: 1px solid #C058F3;
+								@media (max-width:1000px) {
+									border: 1px solid $VeryDarkBlue;
+								}
+							}
+							.radio-check {
+								border: 1px solid $VeryDarkBlue;
+								&.checked {
+									background: linear-gradient(#57DDFF, #C058F3);
+								}
+							}
+						}
+					}
+				}
+			}
+			.task-info {
+				.task-status {
+					.radio-check {
+						border: 1px solid $VeryDarkGrayishBlue;
+						&.checked {
+							background: linear-gradient(#57DDFF, #C058F3);
+						}
+						&.completed {
+							background: linear-gradient(#57DDFF, #C058F3);
+						}
+					}
+				}
+				.task-title {
+					&.checked {
+						color: $VeryDarkGrayishBlueTxt;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.tabs {
+	.task-navigation {
+		background-color: $VeryLightGrayishBlue;
+		box-shadow: 0 10px 15px -2px lightgray;
+		.tabs__navigation {
+			button {
+				color: $VeryDarkGrayishBlueTxt;
+				&:hover {
+					color: $VeryDarkBlue;
+				}
+			}
+			._tab-active {
+				color: $BrightBlue;
+				&:hover {
+					color: $BrightBlue;
+				}
+			}
+		}
+		.clear-completed {
+			button {
+				color: $VeryDarkBlue;
+			}
+		}
+		.task-left {
+			color: $VeryDarkBlue;
+		}
+	}
+	.task-mobile-navigation {
+		background-color:$VeryLightGrayishBlue;
+		box-shadow: 0 10px 15px 2px lightgray;
+		.tabs__navigation {
+			button {
+				color: $VeryDarkGrayishBlueTxt;
+				&:hover {
+					color: $VeryDarkBlue;
+				}
+			}
+			._tab-active {
+				color: $BrightBlue;
+				&:hover {
+					color: $BrightBlue;
+				}
+			}
+		}
+	}
+}
+.close-task-edit{
+	svg{
+		path{
+			fill: black;
+		}
+	}
+}
+.header-theme{
+	.sun{
+		display: none;
+	}
+}
+.background-setting{
+	.dark{
+		display: none;
+	}
+}
+	}

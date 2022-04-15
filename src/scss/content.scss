@@ -35,7 +35,6 @@
 						h1{
 							text-transform: uppercase;
 							font-weight: 700;
-							color: $VeryLightGray;
 							font-size: 2rem;
 							letter-spacing: 2px;
 						}
@@ -49,13 +48,11 @@
 				}
 				ul.tasks {
 					font-family: JosefinSansItalic;
-					background-color: $VeryDarkDesaturatedBlue;
 					border-top-left-radius: 3px;
 					border-top-right-radius: 3px;
 					li {
 						width: 100%;
 						font-size: 1.1rem;
-						color: $VeryLightGray;
 						padding: 1.2rem 1rem 0.8rem 1rem;
 					}
 				}
@@ -72,7 +69,6 @@
 								input{
 									width: 100%;
 									background-color: transparent;
-									color: $VeryLightGray;
 									border: none;
 									outline: none;
 									padding: 0rem 4rem 0rem 0rem;
@@ -83,7 +79,6 @@
 									right: 1rem;
 									top: 50%;
 									transform: translateY(-50%);
-									color:$VeryLightGray;
 									font-family: JosefinSansItalic;
 								}
 							}
@@ -93,14 +88,12 @@
 				.content__form-result{
 					margin-top: 0.5rem;
 					.loading-text{
-						color: $VeryLightGray;
 						padding: 0.5rem;
 						letter-spacing: 1px;
 						visibility: hidden;
 					}
 					ul{
 						li{
-							border-bottom: 1px solid $VeryDarkGrayishBlue;
 							display: flex;
 							justify-content: space-between;
 							.singular-control{
@@ -122,7 +115,6 @@
 										padding: 3rem 3rem 3rem 3rem ;
 										transform: translate(-50%,-40%);
 										position: absolute;
-										background-color: $VeryDarkDesaturatedBluePopup;
 											@include adaptiveValue("width", 900, 500, 1920, 800, 1);
 											
 											@media (max-width: 799px) {
@@ -134,7 +126,6 @@
 												padding: 0.5rem 1rem;
 												border-radius: 300px;
 												margin-top: 3rem;
-												border: 1px solid $VeryLightGray;
 											}
 											.single-task-form h4 {
 												font-family: JosefinSans;
@@ -177,10 +168,7 @@
 											}
 											.task-edit-name{
 												outline: none;
-												border: 1px solid $VeryLightGray;
-												background-color: $VeryDarkDesaturatedBlue;
 												border-radius: 3px;
-												color: $VeryLightGray;
 												padding: 0.5rem;
 												border-top-right-radius: 30rem;
 												border-bottom-right-radius: 30rem;
@@ -190,9 +178,7 @@
 												position: relative;
 										
 												&:hover .radio-check {
-													border: 1px solid #C058F3;
 													@media (max-width:1000px) {
-														border: 1px solid $VeryLightGray;
 													}
 												}
 											
@@ -211,7 +197,6 @@
 													height: 1.3rem;
 													width: 1.3rem;
 													border-radius: 30rem;
-													border: 1px solid $VeryLightGray;
 													&.checked {
 														background: linear-gradient(#57DDFF, #C058F3);
 														border: none;
@@ -254,7 +239,6 @@
 										height: 1.3rem;
 										width: 1.3rem;
 										border-radius: 30rem; 
-										border: 1px solid $VeryDarkGrayishBlue;
 										&.checked{
 											background: linear-gradient(#57DDFF, #C058F3);
 											border: none;
@@ -280,7 +264,6 @@
 								.task-title{
 									margin-left: 1rem;
 									&.checked{
-										color: $VeryDarkGrayishBlueTxt;
 										text-decoration: line-through;
 
 									}
@@ -301,33 +284,26 @@
 						display: flex;
 						justify-content: space-between;
 						width: 100%;
-						background-color:$VeryDarkDesaturatedBlue ;
 						padding: 1rem 1rem 1rem  ;
 						.tabs__navigation{
 							button{
-								color:$VeryDarkGrayishBlueTxt ;
 								margin-left: 1rem;
 								&:hover{
 
-									color: $VeryLightGray;
 								}
 							}
 							._tab-active{
-								color: $BrightBlue;
 								&:hover {
 								
-									color: $BrightBlue;
 								}
 							}
 						}
 						.clear-completed{
 							button{
-								color: $VeryLightGray;
 							}
 
 						}
 						.task-left{
-							color: $VeryLightGray;
 						}
 						}
 						.task-mobile-navigation{
@@ -339,24 +315,19 @@
 							text-align: center;
 							padding: 1rem;
 							border-radius: 3px;
-							background-color:$VeryDarkDesaturatedBlue;
 							.tabs__navigation{
 								button {
-									color: $VeryDarkGrayishBlueTxt;
 									margin-left: 1rem;
 								
 									&:hover {
 								
-										color: $VeryLightGray;
 									}
 								}
 								
 								._tab-active {
-									color: $BrightBlue;
 								
 									&:hover {
 								
-										color: $BrightBlue;
 									}
 								}
 							}
@@ -366,3 +337,24 @@
 		}
 	}
 }
+
+
+
+// ### Light Theme 
+$VeryLightGray: hsl(0, 0%, 98%);
+$VeryLightGrayishBlue: hsl(236, 33%, 92%);
+$VeryLightGrayishBluePopup: hsla(235, 32%, 92%, 0.969);
+$LightGrayishBlue: hsl(233, 11%, 84%);
+$DarkGrayishBlue: hsl(236, 9%, 61%);
+$VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+
+// ### Dark Theme 
+$VeryDarkBlue: hsl(235, 21%, 11%);
+$VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$VeryDarkDesaturatedBluePopup: hsla(236, 22%, 15%, 0.929);
+$LightGrayishBlue: hsl(234, 39%, 85%);
+$LightGrayishBlue : hsl(236, 33%, 92%); //(hover)
+$DarkGrayishBlue: hsl(234, 11%, 52%);
+$VeryDarkGrayishBlueTxt: hsl(233, 14%, 35%);
+$VeryDarkGrayishBlue: hsl(237, 14%, 26%);
