@@ -740,16 +740,17 @@ function rewardsPage(){
 }
 rewardsPage();
 
+
 // first part of rewards
 	if(!localStorage.getItem('setReward')){
 const setRewardInput = document.querySelector('input#set-reward');
-const setRewardForm = document.querySelector('form#set-reward')
+const setRewardForm = document.querySelector('form#set-reward');
 setRewardForm.onsubmit=(e)=>{
 	e.preventDefault();
 	console.log(setRewardInput.value)
 	localStorage.setItem('setReward', setRewardInput.value)
+	
 	window.location.reload();
-
 }
 	}
 
@@ -760,6 +761,7 @@ setRewardForm.onsubmit=(e)=>{
 
 // second part of rewards
 if(localStorage.getItem('setReward') && !localStorage.getItem('rewards')){
+	
 const filterRewardsInputs = document.querySelectorAll('.reward input')
 console.log('filterRewardsInputs', filterRewardsInputs)
 const filterRewardsForm = document.querySelector('form.filterRewards')
@@ -815,3 +817,11 @@ import "./files/script.js";
 
 
 
+// const rewardTab = document.querySelector('.rewardTab');
+// const principalTab = document.querySelector('.principalTab');
+	// function reload(){
+	
+	// 	principalTab.classList.remove('_tab-active');
+	// 	rewardTab.classList.add('_tab-active');
+	// }
+	// setTimeout(reload, 2000)
