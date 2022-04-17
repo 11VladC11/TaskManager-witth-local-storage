@@ -323,16 +323,11 @@
 
 .rewards-page{
 	margin-top: 2.5rem;
-	background-color: $VeryDarkDesaturatedBlue;
-	color: $VeryLightGray;
 	width: 100%;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
-	border-bottom: 1px solid $VeryDarkGrayishBlue ;
 	button {
-		border: 1px solid $LightGrayishBlue;
 		padding: 0.5rem 0.8rem 0.5rem 0.6rem;
-		color: $LightGrayishBlue;
 		border-radius: 30rem;
 	}
 	.setRewards__wrapper{
@@ -355,9 +350,7 @@
 						margin-top: 1.5rem;
 						outline: none;
 						display: block;
-						border: 1px solid $LightGrayishBlue;
 						border-radius: 30rem;
-						color: $LightGrayishBlue;
 						padding: 0.5rem 0.5rem 0.5rem 1rem;
 						background-color: transparent;
 						width: 100%;
@@ -393,10 +386,8 @@
 						input{
 							outline: none;
 							background: transparent;
-							border: 1px solid $LightGrayishBlue;
 							padding: 0.5rem 1rem;
 							border-radius: 30rem;
-							color: $LightGrayishBlue;
 							width: 100%;
 						}
 					}
@@ -452,10 +443,7 @@
 			top: 2%;
 			right: 0%;
 			border: none;
-			color: $DarkGrayishBlue;
-			&:hover{
-				color: $LightGrayishBlue;
-			}
+		
 
 		}
 	}

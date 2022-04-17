@@ -304,6 +304,53 @@ ul.task-control {
 		display: none;
 	}
 }
+
+
+
+.rewards-page {
+	background-color: $VeryDarkDesaturatedBlue;
+	color: $VeryLightGray;
+	border-bottom: 1px solid $VeryDarkGrayishBlue;
+	button {
+		border: 1px solid $LightGrayishBlue;
+		color: $LightGrayishBlue;
+	}
+	.setRewards__wrapper {
+		.setRewards__content {
+			.setRewards-form {
+				form {
+					input {
+						border: 1px solid $LightGrayishBlue;
+						color: $LightGrayishBlue;
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+	.filterRewards__wrapper {
+		.filterRewards__content {
+			.filterRewards-form {
+				form {
+					.reward {
+						input {
+							border: 1px solid $LightGrayishBlue;
+							color: $LightGrayishBlue;
+						}
+					}
+				}
+			}
+		}
+	}
+	.rewards__wrapper {
+		.resetRewards {
+			color: $DarkGrayishBlue;
+			&:hover {
+				color: $LightGrayishBlue;
+			}
+		}
+	}
+}
 }
 ///////////////////////////////////////////////////////
 
@@ -461,6 +508,58 @@ ul.task-control {
 .background-setting{
 	.dark{
 		display: none;
+	}
+}
+
+
+
+
+.rewards-page {
+	background-color: $VeryLightGrayishBlue;
+	color: $VeryDarkBlue;
+	border-bottom: 1px solid lightgray;
+
+	button {
+		border: 1px solid $VeryDarkGrayishBlue;
+		color: $VeryDarkGrayishBlue;
+	}
+
+	.setRewards__wrapper {
+		.setRewards__content {
+			.setRewards-form {
+				form {
+					input {
+						border: 1px solid $VeryDarkGrayishBlue;
+						color: $VeryDarkGrayishBlue;
+					}
+				}
+			}
+		}
+	}
+
+	.filterRewards__wrapper {
+		.filterRewards__content {
+			.filterRewards-form {
+				form {
+					.reward {
+						input {
+							border: 1px solid $VeryDarkGrayishBlue;
+							color: $VeryDarkGrayishBlue;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.rewards__wrapper {
+		.resetRewards {
+			color: $DarkGrayishBlue;
+
+			&:hover {
+				color: $VeryDarkGrayishBlue;
+			}
+		}
 	}
 }
 	}
