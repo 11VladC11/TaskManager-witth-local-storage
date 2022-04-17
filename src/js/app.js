@@ -596,6 +596,220 @@ function skyTheme(){
 	}
 }
 skyTheme();
+
+
+//rewards page
+const rewardsPageEl = document.querySelector('.rewards-page__wrapper');
+
+function rewardsPage(){
+	if(!localStorage.getItem('setReward')){
+		rewardsPageEl.innerHTML= `
+			<div class="setRewards__wrapper">
+				<div class="setRewards__content">
+				<div class="setRewards-header">
+					<h1>
+						You have no rewards yet!
+					</h1>
+				</div>
+				<div class="setRewards-form">
+					<form id="set-reward">
+						<h1>How many rewards do you want?</h1>
+						<input type="number"  name="" id="set-reward" min="1" max="5" required>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		`
+	}else if(localStorage.getItem('setReward') && !localStorage.getItem('rewards')){
+		const setRewardHtml = [
+			//1
+			`<div class="reward">
+				<h4><span>First</span> reward</h4>
+				<input type="text" placeholder="e.g. watch a film" required>
+			</div>`,
+			//2
+			`<div class="reward">
+				<h4><span>First</span> reward</h4>
+				<input type="text" placeholder="e.g. watch a film" required>
+			</div>
+
+			<div class="reward">
+				<h4><span>Second</span> reward</h4>
+				<input type="text" placeholder="e.g. go to the theatre" required>
+			</div>`,
+			//3
+			`
+			<div class="reward">
+				<h4><span>First</span> reward</h4>
+				<input type="text" placeholder="e.g. watch a film" required>
+			</div>
+
+			<div class="reward">
+				<h4><span>Second</span> reward</h4>
+				<input type="text" placeholder="e.g. go to the theatre" required>
+			</div>
+			
+			<div class="reward">
+				<h4><span>Third</span> reward</h4>
+				<input type="text" placeholder="e.g. go for a long walk" required>
+			</div>`,
+			//4
+			`
+			<div class="reward">
+				<h4><span>First</span> reward</h4>
+				<input type="text" placeholder="e.g. watch a film" required>
+			</div>
+
+			<div class="reward">
+				<h4><span>Second</span> reward</h4>
+				<input type="text" placeholder="e.g. go to the theatre" required>
+			</div>
+			
+			<div class="reward">
+				<h4><span>Third</span> reward</h4>
+				<input type="text" placeholder="e.g. go for a long walk" required>
+			</div>
+
+			<div class="reward">
+				<h4><span>Forth</span> reward</h4>
+				<input type="text" placeholder="e.g start a new hobby" required>
+			</div>`,
+			//5
+			`
+			<div class="reward">
+				<h4><span>First</span> reward</h4>
+				<input type="text" placeholder="e.g. watch a film" required>
+			</div>
+
+			<div class="reward">
+				<h4><span>Second</span> reward</h4>
+				<input type="text" placeholder="e.g. go to the theatre" required>
+			</div>
+			
+			<div class="reward">
+				<h4><span>Third</span> reward</h4>
+				<input type="text" placeholder="e.g. go for a long walk" required>
+			</div>
+
+			<div class="reward">
+				<h4><span>Forth</span> reward</h4>
+				<input type="text" placeholder="e.g start a new hobby" required>
+			</div>
+
+			<div class="reward">
+				<h4><span>Fifth</span> reward</h4>
+				<input type="text" placeholder="e.g. out with friends" required>
+			</div>`
+		]
+		localStorage.getItem('setReward')
+		 rewardsPageEl.innerHTML=`
+		<div class="filterRewards__wrapper">
+						<div class="filterRewards__content">
+							<div class="filterRewards-header">
+								<h1>Now, let's make your reward list</h1>
+							</div>
+							<div class="filterRewards-form">
+								<form class="filterRewards">
+									${setRewardHtml[localStorage.getItem('setReward')-1]}
+									<button type="submit">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+		`
+	}else if(localStorage.getItem('rewards')){
+		rewardsPageEl.innerHTML=`
+		<div class="rewards__wrapper">
+			<div class="rewards__content">
+				<div class="rewards-header">
+					<h4>(you have <span class="incart"></span> items in your reward list)</h4>
+				</div>
+				<div class="rewards-body">
+					<h2>Here is a random reward generator, click the <span>get reward</span> button to get a random reward from your reward list</h2>
+					<div class="reward-container">
+						<div class="getReward">" "</div>
+						<button class="rarew">Get Reward</button>
+					</div>
+				</div>
+			</div>
+			<button class="resetRewards">Reset the list</button>
+		</div>
+		`
+	}
+}
+rewardsPage();
+
+// first part of rewards
+	if(!localStorage.getItem('setReward')){
+const setRewardInput = document.querySelector('input#set-reward');
+const setRewardForm = document.querySelector('form#set-reward')
+setRewardForm.onsubmit=(e)=>{
+	e.preventDefault();
+	console.log(setRewardInput.value)
+	localStorage.setItem('setReward', setRewardInput.value)
+	window.location.reload();
+
+}
+	}
+
+
+
+
+
+
+// second part of rewards
+if(localStorage.getItem('setReward') && !localStorage.getItem('rewards')){
+const filterRewardsInputs = document.querySelectorAll('.reward input')
+console.log('filterRewardsInputs', filterRewardsInputs)
+const filterRewardsForm = document.querySelector('form.filterRewards')
+console.log('filterRewardsForm', filterRewardsForm)
+filterRewardsForm.onsubmit=(e)=>{
+	e.preventDefault();
+	var allRewards=[];
+	filterRewardsInputs.forEach(function(i){
+		allRewards.push(i.value)
+	})
+	localStorage.setItem('rewards', JSON.stringify(allRewards))
+	window.location.reload();
+}
+}
+
+
+
+
+
+
+
+
+//third part
+ if(localStorage.getItem('rewards')){
+const rarew = document.querySelector('.rarew')
+const getReward = document.querySelector('.getReward')
+const randomNumber = (max)=>{
+	return Math.floor(Math.random()* max)
+}
+rarew.onclick =()=>{
+	const oneReward = JSON.parse(localStorage.getItem('rewards'))
+	getReward.innerHTML=`
+	"${oneReward[randomNumber(localStorage.getItem('setReward'))]}"
+	`
+}
+
+const resetRewards = document.querySelector('.resetRewards')
+resetRewards.onclick=()=>{
+	localStorage.removeItem('rewards');
+	localStorage.removeItem('setReward');
+	window.location.reload();
+}
+ }
+
+
+
+
+
+
+
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
 

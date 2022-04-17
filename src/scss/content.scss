@@ -288,23 +288,12 @@
 						.tabs__navigation{
 							button{
 								margin-left: 1rem;
-								&:hover{
-
-								}
-							}
-							._tab-active{
-								&:hover {
 								
-								}
 							}
+							
 						}
-						.clear-completed{
-							button{
-							}
-
-						}
-						.task-left{
-						}
+						
+						
 						}
 						.task-mobile-navigation{
 							@media (min-width:801px) {
@@ -319,17 +308,10 @@
 								button {
 									margin-left: 1rem;
 								
-									&:hover {
-								
-									}
+									
 								}
 								
-								._tab-active {
 								
-									&:hover {
-								
-									}
-								}
 							}
 						}
 					}
@@ -339,22 +321,195 @@
 }
 
 
+.rewards-page{
+	margin-top: 2.5rem;
+	background-color: $VeryDarkDesaturatedBlue;
+	color: $VeryLightGray;
+	width: 100%;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom: 1px solid $VeryDarkGrayishBlue ;
+	button {
+		border: 1px solid $LightGrayishBlue;
+		padding: 0.5rem 0.8rem 0.5rem 0.6rem;
+		color: $LightGrayishBlue;
+		border-radius: 30rem;
+	}
+	.setRewards__wrapper{
+		padding: 1.5rem;
+		.setRewards__content{
+			.setRewards-header{
+				h1{
+					font-size: 2rem;
+					text-align: center;
+				}
+			}
+			.setRewards-form{
+				margin-top: 1.5rem;
+				form{
+					text-align: center;
+					h1{
+						font-size: 1.5rem;
+					}
+					input{
+						margin-top: 1.5rem;
+						outline: none;
+						display: block;
+						border: 1px solid $LightGrayishBlue;
+						border-radius: 30rem;
+						color: $LightGrayishBlue;
+						padding: 0.5rem 0.5rem 0.5rem 1rem;
+						background-color: transparent;
+						width: 100%;
+						text-align: center;
+					}
+					button{
+						margin-top: 1rem;
+						width: 10rem;
+					}
+					
+				}
+			}
+		}
+	}
 
-// ### Light Theme 
-$VeryLightGray: hsl(0, 0%, 98%);
-$VeryLightGrayishBlue: hsl(236, 33%, 92%);
-$VeryLightGrayishBluePopup: hsla(235, 32%, 92%, 0.969);
-$LightGrayishBlue: hsl(233, 11%, 84%);
-$DarkGrayishBlue: hsl(236, 9%, 61%);
-$VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+	.filterRewards__wrapper{
+		padding: 1.5rem;
+		.filterRewards__content{
+			.filterRewards-header{
+				h1{
+					font-size: 1.5rem;
+				}
+			}
+			.filterRewards-form{
+				margin-top: 2rem;
+				form{
+					.reward{
+						margin-top: 1rem;
+						h4{
+							font-size: 1.2rem;
+							margin-bottom: 0.5rem;
+						}
+						input{
+							outline: none;
+							background: transparent;
+							border: 1px solid $LightGrayishBlue;
+							padding: 0.5rem 1rem;
+							border-radius: 30rem;
+							color: $LightGrayishBlue;
+							width: 100%;
+						}
+					}
+					button{
+						border-radius: 30rem;
+						width: 15rem;
+						display: block;
+						margin: 1.5rem auto 0;
+					}
+				}
+			}
+		}
+	}
+
+	.rewards__wrapper{
+		position: relative;
+		padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+		.rewards__content{
+			.rewards-header{
+				text-align: center;
+				h4{
+					font-size: 0.9rem;
+				}
+			}
+			.rewards-body{
+				margin-top: 1rem;
+				text-align: center;
+				h2{
+					font-size: 1rem;
+					span{
+						font-weight: 700;
+					}
+				}
+				.reward-container{
+					.getReward{
+						margin: 1.5rem auto;
+						font-size: 1.5rem;
+						text-transform: capitalize;
+					}
+					button{
+						border-radius: 30rem;
+						width: 10rem;
+						@media (max-width:700px) {
+							width: 100%;
+							
+						}
+					}
+				}
+			}
+		}
+		.resetRewards{
+			position: absolute;
+			top: 2%;
+			right: 0%;
+			border: none;
+			color: $DarkGrayishBlue;
+			&:hover{
+				color: $LightGrayishBlue;
+			}
+
+		}
+	}
+}
 
 
-// ### Dark Theme 
-$VeryDarkBlue: hsl(235, 21%, 11%);
-$VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
-$VeryDarkDesaturatedBluePopup: hsla(236, 22%, 15%, 0.929);
-$LightGrayishBlue: hsl(234, 39%, 85%);
-$LightGrayishBlue : hsl(236, 33%, 92%); //(hover)
-$DarkGrayishBlue: hsl(234, 11%, 52%);
-$VeryDarkGrayishBlueTxt: hsl(233, 14%, 35%);
-$VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // ### Light Theme 
+// $VeryLightGray: hsl(0, 0%, 98%);
+// $VeryLightGrayishBlue: hsl(236, 33%, 92%);
+// $VeryLightGrayishBluePopup: hsla(235, 32%, 92%, 0.969);
+// $LightGrayishBlue: hsl(233, 11%, 84%);
+// $DarkGrayishBlue: hsl(236, 9%, 61%);
+// $VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+
+// // ### Dark Theme 
+// $VeryDarkBlue: hsl(235, 21%, 11%);
+// $VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+// $VeryDarkDesaturatedBluePopup: hsla(236, 22%, 15%, 0.929);
+// $LightGrayishBlue: hsl(234, 39%, 85%);
+// $LightGrayishBlue : hsl(236, 33%, 92%); //(hover)
+// $DarkGrayishBlue: hsl(234, 11%, 52%);
+// $VeryDarkGrayishBlueTxt: hsl(233, 14%, 35%);
+// $VeryDarkGrayishBlue: hsl(237, 14%, 26%);
