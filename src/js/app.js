@@ -804,6 +804,9 @@ resetRewards.onclick=()=>{
 	localStorage.removeItem('setReward');
 	window.location.reload();
 }
+const incart = document.querySelector('.incart');
+const oneReward = JSON.parse(localStorage.getItem('rewards'))
+incart.innerHTML = oneReward.length
  }
 
 
