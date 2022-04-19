@@ -284,13 +284,34 @@
 						display: flex;
 						justify-content: space-between;
 						width: 100%;
-						padding: 1rem 1rem 1rem  ;
-						.tabs__navigation{
+						padding: 1rem 1rem 1rem;
+						.tabs__navigation{ 
+							position: relative;
 							button{
 								margin-left: 1rem;
 								
 							}
-							
+							.rewardTab{
+								position:relative;
+
+									svg{
+										fill: hsl(233deg, 14%, 35%);
+										height: 0.9rem;
+										position: absolute;
+										right: -1.2rem;
+										bottom: 0%;
+									}
+							 
+							}
+							.rewardsTabPopup{
+								position:absolute;
+								width: 5rem;
+								height: 100%;
+								left: 16%;
+								top: 0;
+								background-color: rgba(169, 169, 169, 0.761);
+								z-index: 100;
+							}
 						}
 						
 						
@@ -305,12 +326,49 @@
 							padding: 1rem;
 							border-radius: 3px;
 							.tabs__navigation{
+								position: relative;
 								button {
 									margin-left: 1rem;
 								
 									
 								}
+								.rewardButton{
+									display: inline-block;
+								}
+								.rewardTab {
+									position: relative;
 								
+									svg {
+										fill: hsl(233deg, 14%, 35%);
+										height: 0.9rem;
+										position: absolute;
+										right: -1.3rem;
+										bottom: 0%;
+									
+										@media (min-width:426px) {
+											right: -1.2rem;
+										}
+									}
+								
+								}
+								.rewardsTabPopup {
+									position: absolute;
+									width: 5rem;
+									height: 100%;
+									left: 20%;
+									top: 0;
+									background-color: rgba(169, 169, 169, 0.655);
+									z-index: 100;
+									@media (min-width:426px) {
+										left: 25%;
+									}
+									@media (min-width:575px) {
+										left: 28%;
+									}
+									@media (min-width:640px) {
+										left: 31%;
+									}
+								}
 								
 							}
 						}

@@ -810,7 +810,12 @@ incart.innerHTML = oneReward.length
  }
 
 
+ const rewardTab = document.querySelector('.rewardTab');
+ const rewardTabPopup = document.querySelector('.rewardsTabPopup');
 
+rewardTabPopup.onclick = (e)=>{
+// alert('csc')
+}
 
 
 
