@@ -809,15 +809,39 @@ const oneReward = JSON.parse(localStorage.getItem('rewards'))
 incart.innerHTML = oneReward.length
  }
 
-
+ 
+ //reward lock for min 2 tasks completed
  const rewardTab = document.querySelector('.rewardTab');
  const rewardTabPopup = document.querySelector('.rewardsTabPopup');
+ const lockSvg = document.querySelector('.rewardTab svg')
+var retrievedData = localStorage.getItem('todoItemsTut');
+var editTask = JSON.parse(retrievedData)
+		const newArr = editTask.map(obj => {
+			if (obj.checked == 'checked'){
+				return obj;
+			}
+			return;
+		})
+		console.log(newArr)
+		const filtered = newArr.filter(e => e != null);
+		console.log(filtered.length)
 
-rewardTabPopup.onclick = (e)=>{
-// alert('csc')
+if(filtered.length >= 2){
+rewardTabPopup.classList.add('hidden');
+lockSvg.classList.add('hidden')
+}else{
+rewardTabPopup.classList.remove('hidden');
+lockSvg.classList.remove('hidden')
 }
 
-
+const lockPopup = document.querySelector('.lock-popup')
+const closePP = document.querySelector('.lock-popup .close')
+closePP.onclick =()=>{
+	lockPopup.classList.add('hidden')
+}
+rewardTabPopup.onclick=()=>{
+	lockPopup.classList.remove('hidden')
+}
 
 
 import "./files/script.js";

@@ -351,6 +351,17 @@ ul.task-control {
 		}
 	}
 }
+.lock-popup {
+	background-color: $VeryDarkDesaturatedBluePopup;
+	color: $VeryLightGray;
+		box-shadow: 0 5px 15px 2px rgb(11, 11, 11);
+
+	svg {
+		path {
+			fill: $VeryLightGray;
+		}
+	}
+}
 }
 ///////////////////////////////////////////////////////
 
@@ -559,6 +570,18 @@ ul.task-control {
 			&:hover {
 				color: $VeryDarkGrayishBlue;
 			}
+		}
+	}
+}
+
+
+.lock-popup {
+	background-color: $VeryLightGrayishBluePopup;
+	color: $DarkGrayishBlue;
+		box-shadow: 0 10px 15px 2px lightgray;
+	svg {
+		path {
+			fill: $DarkGrayishBlue;
 		}
 	}
 }
