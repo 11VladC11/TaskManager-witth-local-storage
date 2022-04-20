@@ -507,6 +507,10 @@
 			.rewards-body{
 				margin-top: 1rem;
 				text-align: center;
+				h1{
+					font-size: 1.5rem;
+					margin-bottom:1rem;
+				}
 				h2{
 					font-size: 1rem;
 					span{
@@ -541,12 +545,40 @@
 	}
 }
 
-
-
-
-
-
-
+.motivation-page{
+	.motivation__wrapper{
+		margin-top: 2rem;
+		border-radius: 3px;
+		padding: 1.5rem;
+		text-align: center;
+		.motivation__content{
+			.motivation__header{
+				font-size: 2rem;
+			}
+			.quote-area{
+				margin-top: 1rem;
+				.quote{
+					font-size: 1.2rem;
+					.quoteTxt{
+						margin: 1rem 0;
+					}
+				}
+				.author{
+					margin-top: 0.5rem;
+					display: flex;
+					justify-content: right;
+					font-size: 1rem;
+				}
+			}
+			.quote-button{
+				margin-top: 1rem;
+				padding: 0.5rem 1rem;
+				border-radius: 30rem;
+				width: 100%;
+			}
+		}
+	}
+}
 
 
 

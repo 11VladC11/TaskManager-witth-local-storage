@@ -726,6 +726,7 @@ function rewardsPage(){
 					<h4>(you have <span class="incart"></span> items in your reward list)</h4>
 				</div>
 				<div class="rewards-body">
+				<h1>Reward yourself,</br> for you worked hard all day</h1>
 					<h2>Here is a random reward generator, click the <span>get reward</span> button to get a random reward from your reward list</h2>
 					<div class="reward-container">
 						<div class="getReward">" "</div>
@@ -841,6 +842,28 @@ closePP.onclick =()=>{
 }
 rewardTabPopup.onclick=()=>{
 	lockPopup.classList.remove('hidden')
+}
+
+//motivation-section---------------------------------------------------
+
+
+const quoteText = document.querySelector(".quoteTxt"),
+quoteBtn = document.querySelector(".quote-button"),
+authorName = document.querySelector(".quote-author");
+function randomQuote(){
+    quoteBtn.classList.add("loading");
+    quoteBtn.innerText = "Loading Quote...";
+    fetch("http://api.quotable.io/random").then(response => response.json()).then(result => {
+        quoteText.innerText = result.content;
+        authorName.innerText = result.author;
+        quoteBtn.classList.remove("loading");
+        quoteBtn.innerText = "New Quote";
+    });
+}
+
+randomQuote()
+quoteBtn.onclick=()=>{
+	randomQuote()
 }
 
 

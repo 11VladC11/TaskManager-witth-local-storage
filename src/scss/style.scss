@@ -362,6 +362,19 @@ ul.task-control {
 		}
 	}
 }
+.motivation-page {
+	.motivation__wrapper {
+		background-color: $VeryDarkDesaturatedBlue;
+		border-bottom: 1px solid $VeryDarkGrayishBlue;
+		color: $LightGrayishBlue;
+
+		.motivation__content {
+			.quote-button {
+				border: 1px solid $LightGrayishBlue;
+			}
+		}
+	}
+}
 }
 ///////////////////////////////////////////////////////
 
@@ -582,6 +595,19 @@ ul.task-control {
 	svg {
 		path {
 			fill: $DarkGrayishBlue;
+		}
+	}
+}
+.motivation-page {
+	.motivation__wrapper {
+		background-color: $VeryLightGrayishBlue;
+		border-bottom: 1px solid lightgray;
+		color: $VeryDarkBlue;
+
+		.motivation__content {
+			.quote-button {
+				border: 1px solid $VeryDarkBlue;
+			}
 		}
 	}
 }
