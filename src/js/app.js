@@ -850,26 +850,12 @@ rewardTabPopup.onclick=()=>{
 const quoteText = document.querySelector(".quoteTxt"),
 quoteBtn = document.querySelector(".quote-button"),
 authorName = document.querySelector(".quote-author");
-// function randomQuote(){
-//     quoteBtn.classList.add("loading");
-//     quoteBtn.innerText = "Loading Quote...";
-//     fetch("http://api.quotable.io/random").then(response => response.json()).then(result => {
-//         quoteText.innerText = result.content;
-//         authorName.innerText = result.author;
-//         quoteBtn.classList.remove("loading");
-//         quoteBtn.innerText = "New Quote";
-//     });
-// }
-
-// randomQuote();
-// quoteBtn.onclick=()=>{
-// 	randomQuote()
-// }
-
 const api_url ="https://type.fit/api/quotes";
 
 async function getapi(url)
 {
+	quoteBtn.classList.add("loading");
+    quoteBtn.innerText = "Loading Quote...";
   const response = await fetch(url);
   var data = await response.json();
   const num = Math.floor(Math.random()*data.length);
@@ -883,12 +869,76 @@ async function getapi(url)
 //   console.log(data);
 //   console.log('num', num)
 //   console.log('item', item)
+quoteBtn.classList.remove("loading");
+        quoteBtn.innerText = "New Quote";
 }
 
 getapi(api_url);
 quoteBtn.onclick=()=>{
 	getapi(api_url);
 }
+
+
+const lifeJourneyHtml = [
+	//first section
+	`<div class="history__starter-section">
+		<div class="history__header">
+			<h4>This section is about time</h4>
+			<h5>(approximating how much time has passed in your life, in your current day, week, and year)</h5>
+		</div>
+		<div class="history__form">
+			<form>
+				<h4>Please enter your birthday</h4>
+				<input type="date" class="birthday">
+				<h4>How long do you wish to live?</h4>
+				<input type="number" class="years-old">
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>`,
+	//second section
+	`<div class="history__regular-section">
+		<div class="history__header">
+			<h2>Life Journey</h2>
+		</div>
+		<div class="history__time-counter">
+			<div class="life-wrapper wrapperh">
+				<div class="life-counter counter">Life: 70%</div>
+				<div class="life-container container">
+					<div class="life text"></div>
+				</div>
+			</div>
+			<div class="year-wrapper wrapperh">
+				<div class="year-counter counter">Year: 70%</div>
+				<div class="year-container container">
+					<div class="year text"></div>
+				</div>
+			</div>
+			<div class="month-wrapper wrapperh">
+				<div class="month-counter counter">Month: 70%</div>
+				<div class="month-container container">
+					<div class="month text"></div>
+				</div>
+			</div>
+			<div class="week-wrapper wrapperh">
+				<div class="week-counter counter">Week: 70%</div>
+				<div class="week-container container">
+					<div class="week text"></div>
+				</div>
+			</div>
+			<div class="day-wrapper wrapperh">
+				<div class="day-counter counter">Day: 70%</div>
+				<div class="day-container container">
+					<div class="day text"></div>
+				</div>
+			</div>
+		</div>
+	</div>`
+]
+
+
+
+
 
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
