@@ -861,7 +861,7 @@ function randomQuote(){
     });
 }
 
-randomQuote()
+randomQuote();
 quoteBtn.onclick=()=>{
 	randomQuote()
 }
