@@ -850,22 +850,45 @@ rewardTabPopup.onclick=()=>{
 const quoteText = document.querySelector(".quoteTxt"),
 quoteBtn = document.querySelector(".quote-button"),
 authorName = document.querySelector(".quote-author");
-function randomQuote(){
-    quoteBtn.classList.add("loading");
-    quoteBtn.innerText = "Loading Quote...";
-    fetch("http://api.quotable.io/random").then(response => response.json()).then(result => {
-        quoteText.innerText = result.content;
-        authorName.innerText = result.author;
-        quoteBtn.classList.remove("loading");
-        quoteBtn.innerText = "New Quote";
-    });
+// function randomQuote(){
+//     quoteBtn.classList.add("loading");
+//     quoteBtn.innerText = "Loading Quote...";
+//     fetch("http://api.quotable.io/random").then(response => response.json()).then(result => {
+//         quoteText.innerText = result.content;
+//         authorName.innerText = result.author;
+//         quoteBtn.classList.remove("loading");
+//         quoteBtn.innerText = "New Quote";
+//     });
+// }
+
+// randomQuote();
+// quoteBtn.onclick=()=>{
+// 	randomQuote()
+// }
+
+const api_url ="https://type.fit/api/quotes";
+
+async function getapi(url)
+{
+  const response = await fetch(url);
+  var data = await response.json();
+  const num = Math.floor(Math.random()*data.length);
+  const item = data[num];
+  quoteText.innerHTML = item.text;
+  if(item.author == null){
+	  authorName.innerHTML = 'Unknown';
+  }else{
+	  authorName.innerHTML = item.author;
+  }
+//   console.log(data);
+//   console.log('num', num)
+//   console.log('item', item)
 }
 
-randomQuote();
+getapi(api_url);
 quoteBtn.onclick=()=>{
-	randomQuote()
+	getapi(api_url);
 }
-
 
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
