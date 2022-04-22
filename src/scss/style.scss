@@ -375,6 +375,43 @@ ul.task-control {
 		}
 	}
 }
+.history__wrapper {
+	background-color: $VeryDarkDesaturatedBlue;
+	border-bottom: 1px solid $VeryDarkGrayishBlue;
+	color: $LightGrayishBlue;
+
+	.history__content {
+		.history__starter-section {
+			.history__form {
+				form {
+					input {
+						color-scheme: dark;
+						color: $LightGrayishBlue;
+						border: 1px solid $LightGrayishBlue;
+					}
+
+					button {
+						border: 1px solid $LightGrayishBlue;
+					}
+				}
+			}
+		}
+
+		.history__regular-section {
+			.history__time-counter {
+				.wrapperh {
+					.container {
+						border: 1px solid $LightGrayishBlue;
+
+						.text {
+							background-color: $LightGrayishBlue;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 }
 ///////////////////////////////////////////////////////
 
@@ -607,6 +644,46 @@ ul.task-control {
 		.motivation__content {
 			.quote-button {
 				border: 1px solid $VeryDarkBlue;
+			}
+		}
+	}
+}
+
+
+//life journey section
+.history__wrapper {
+	background-color: $VeryLightGrayishBlue;
+	border-bottom: 1px solid lightgray;
+	color: $VeryDarkBlue;
+
+	.history__content {
+		.history__starter-section {
+			.history__form {
+				form {
+					input {
+						color-scheme: white;
+						color: $VeryDarkBlue;
+						border: 1px solid $VeryDarkBlue;
+					}
+
+					button {
+						border: 1px solid $VeryDarkBlue;
+					}
+				}
+			}
+		}
+
+		.history__regular-section {
+			.history__time-counter {
+				.wrapperh {
+					.container {
+						border: 1px solid $VeryDarkBlue;
+
+						.text {
+							background-color: rgba(43, 43, 43, 0.701);
+						}
+					}
+				}
 			}
 		}
 	}

@@ -889,9 +889,9 @@ const lifeJourneyHtml = [
 		<div class="history__form">
 			<form class="form-history">
 				<h4>Please enter your age</h4>
-				<input type="number" class="getbirthday" required>
+				<input type="number" class="getbirthday" required  min="1" max="100">
 				<h4>How long do you wish to live?</h4>
-				<input type="number" class="years-old" required placeholder="e.g.  82 years ">
+				<input type="number" class="years-old" required min="1" max="100" placeholder="e.g.  82 years ">
 				<button type="submit">Submit</button>
 			</form>
 		</div>
