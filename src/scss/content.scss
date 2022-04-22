@@ -292,6 +292,10 @@
 								
 							}
 							.rewardTab{
+								@media (min-width:950px) {
+									margin-right: 0.5rem;
+									
+								}
 								position:relative;
 
 									svg{
@@ -343,6 +347,7 @@
 								}
 								.rewardTab {
 									position: relative;
+									margin-right: 0.5rem;
 								
 									svg {
 										fill: hsl(233deg, 14%, 35%);
