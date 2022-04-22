@@ -531,9 +531,23 @@ var editTask = JSON.parse(retrievedData)
 
 
 //task Counter
+
 const taskCounter = document.querySelector('#hmany')
-const taskCrowd = allTasks.children.length;
-taskCounter.innerHTML = taskCrowd;
+function taskCounterfun(){
+	
+	const retrievedData = localStorage.getItem('todoItemsTut');
+	const editTask = JSON.parse(retrievedData)
+	const newArr = editTask.map(obj => {
+		if (obj.checked == 'off'){
+			return obj;
+		}
+		return;
+	})
+	const filtered = newArr.filter(e => e != null);
+	
+	return filtered.length;
+}
+taskCounter.innerHTML = taskCounterfun();
 
 
 
