@@ -404,10 +404,14 @@
 	// height: 10rem;
 	text-align: center;
 	font-size: 1.5rem;
+	@media (min-width:100px) {
+		top: 80%;
+		width: 50%;
+	}
 	svg{
 		position: absolute;
-		top: 5%;
-		right: 2%;
+		top: 1rem;
+		right: 1rem;
 		cursor: pointer;
 		}
 		&.hidden{
