@@ -823,9 +823,9 @@ var editTask = JSON.parse(retrievedData)
 			}
 			return;
 		})
-		console.log(newArr)
+		// console.log(newArr)
 		const filtered = newArr.filter(e => e != null);
-		console.log(filtered.length)
+		// console.log(filtered.length)
 
 if(filtered.length >= 2){
 rewardTabPopup.classList.add('hidden');
@@ -887,11 +887,11 @@ const lifeJourneyHtml = [
 			<h5>(approximating how much time has passed in your life, in your current day, week, and year)</h5>
 		</div>
 		<div class="history__form">
-			<form>
-				<h4>Please enter your birthday</h4>
-				<input type="date" class="birthday">
+			<form class="form-history">
+				<h4>Please enter your age</h4>
+				<input type="number" class="getbirthday" required>
 				<h4>How long do you wish to live?</h4>
-				<input type="number" class="years-old">
+				<input type="number" class="years-old" required placeholder="e.g.  82 years ">
 				<button type="submit">Submit</button>
 			</form>
 		</div>
@@ -933,13 +933,154 @@ const lifeJourneyHtml = [
 				</div>
 			</div>
 		</div>
+		<button type="submit" class="reset">Reset This Section</button>
 	</div>`
 ]
 
+const historyContent = document.querySelector('.history__content');
+if(!localStorage.getItem('lifeJourney')){
+	historyContent.innerHTML = lifeJourneyHtml[0];
+}else if(localStorage.getItem('lifeJourney')){
+	historyContent.innerHTML = lifeJourneyHtml[1];
+}
 
+const formHistory = document.querySelector('.form-history');
+if(!localStorage.getItem('lifeJourney')){
 
+formHistory.onsubmit=(e)=>{
+	e.preventDefault();
+	const getbirthday = document.querySelector('.getbirthday').value;
+	console.log('getbirthday', getbirthday);
+	const getYearsOld = document.querySelector('.years-old').value;
+	console.log('getYearsOld', getYearsOld);
+	const lifeJourney = [
+		{
+		birthday:getbirthday,
+		years:getYearsOld,
+		}	
+	]
+	console.log('lifeJourney', lifeJourney)
+	localStorage.setItem('lifeJourney', JSON.stringify(lifeJourney))
+	window.location.reload()
+}
+}
+//second section from life Journey
+if(localStorage.getItem('lifeJourney')){
+//day function
+function showMeDay(){
+	const dayPercentage =()=>{
+		const today = new Date();
+		let h = today.getHours();
+		let m = today.getMinutes();
+		let s = today.getSeconds();
 
+		return (((h*60*60)+(m*60)+s)*100)/(24*60*60);
+	}
+	const dayCounter = document.querySelector('.day-counter')
+	const day = document.querySelector('.day');
+	dayCounter.innerHTML = `
+	Day: ${Math.round(dayPercentage())}%
+	`;
+	day.style.width = dayPercentage()+'%'
+  setTimeout(showMeDay, 1000);
 
+}
+showMeDay();
+
+//week function 
+function showMeWeek (){
+	const weekPercentage =()=>{
+		const today = new Date();
+		let h = today.getHours();
+		let w = today.getDay();
+		return (100*((w*24)+h))/168
+	}
+	const weekCounter = document.querySelector('.week-counter')
+	const week = document.querySelector('.week')
+	weekCounter.innerHTML =`
+	Week: ${Math.round(weekPercentage())}%`
+	week.style.width = weekPercentage()+'%'
+   setTimeout(showMeWeek, 100000)
+}
+showMeWeek();
+
+//month function
+function showMeMonth(){
+	const monthPercentage =()=>{
+		const today = new Date();
+		const m = today.getMonth()+1;
+		const y = today.getFullYear();
+		const d = today.getDate();
+		function daysInMonth (month, year) {
+			return new Date(year, month, 0).getDate();
+		}
+		return (d*100)/daysInMonth(m,y)
+	}
+	const monthCounter= document.querySelector('.month-counter')
+	monthCounter.innerHTML=`
+	Month: ${Math.floor(monthPercentage())}%`
+	const month = document.querySelector('.month');
+	month.style.width = monthPercentage()+'%'
+	setTimeout(showMeMonth, 10000000)
+
+}
+showMeMonth();
+
+//year function
+function showMeYear(){
+	const yearPercentage=()=>{
+		const today = new Date();
+		function getWeekNumber(d) {
+			// Copy date so don't modify original
+			d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+			// Set to nearest Thursday: current date + 4 - current day number
+			// Make Sunday's day number 7
+			d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+			// Get first day of year
+			var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+			// Calculate full weeks to nearest Thursday
+			var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+			// Return array of year and week number
+			return [d.getUTCFullYear(), weekNo];
+		}
+		var result = getWeekNumber(new Date());
+		return (result[1]*100)/52
+	}
+	console.log('yearPercentage()', yearPercentage())
+	const yearCounter = document.querySelector('.year-counter');
+	const year = document.querySelector('.year')
+	yearCounter.innerHTML= `
+	Year: ${Math.floor(yearPercentage())}%`
+	year.style.width = yearPercentage()+'%'
+	setTimeout(showMeMonth, 10000000)
+}
+showMeYear();
+
+// life function
+function showMeLife(){
+	const lifePercentage =()=>{
+		const lifeStorage = JSON.parse(localStorage.getItem('lifeJourney'))
+		const birthday = lifeStorage[0].birthday;
+		const years = lifeStorage[0].years;
+		return (birthday*100)/years;
+	}
+	const lifeCounter = document.querySelector('.life-counter');
+	const life = document.querySelector('.life');
+	lifeCounter.innerHTML=`
+	Life: ${Math.floor(lifePercentage())}%`
+	life.style.width = lifePercentage()+'%'
+	console.log('lifePercentage()', lifePercentage())
+	setTimeout(showMeMonth, 10000000)
+}
+showMeLife();
+
+//reset button
+const reset = document.querySelector('.history__regular-section .reset')
+reset.onclick=()=>{
+	localStorage.removeItem('lifeJourney')
+	window.location.reload();
+}
+}
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
 
