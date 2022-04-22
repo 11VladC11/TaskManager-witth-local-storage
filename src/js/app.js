@@ -1081,6 +1081,15 @@ reset.onclick=()=>{
 	window.location.reload();
 }
 }
+
+
+//language
+// setTimeout(()=>{
+// 	if (document.documentElement.lang === "ro") {
+// 		const headerTitle = document.querySelector('.header-title h1');
+// 		headerTitle.innerHTML='De făcut'
+// 	} 
+// },10000)
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
 
