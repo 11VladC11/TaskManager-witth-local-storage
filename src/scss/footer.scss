@@ -1,3 +1,43 @@
 //====================================================================================================
+.light{
+	.footer{
+		width: 100%;
+		.footer__container{
+			border-top: 1px solid lightgray;
+			padding: 0.5rem ;
+			text-align: center;
+			h1{
+				font-size: 0.7rem;
+				a{
+					color: gray;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
 
-//====================================================================================================
+.dark {
+	.footer {
+		width: 100%;
+		.footer__container {
+			color: $VeryLightGray;
+			border-top: 1px solid $VeryDarkGrayishBlue;
+			padding: 0.5rem;
+			text-align: center;
+			h1 {
+				font-size: 0.7rem;
+				a {
+					color: gray;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+	//====================================================================================================
