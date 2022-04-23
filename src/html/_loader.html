@@ -24,7 +24,8 @@
 							localStorage.setItem('entry', h)
 						}, 2500)
 					}
-					if (!localStorage.getItem('entry') == h) {
+					
+					if (localStorage.getItem('entry') != h) {
 						loaderWrapper.classList.add('active')
 						setTimeout(() => {
 							loaderWrapper.classList.remove('active')
