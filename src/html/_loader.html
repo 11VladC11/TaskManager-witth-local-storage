@@ -11,11 +11,28 @@
 	</div>
 </div>
 	<script>
-		//preloader
-		var loaderWrapper = document.querySelector('.loader__wrapper');
-		loaderWrapper.classList.add('active')
-		setTimeout(() => {
-			loaderWrapper.classList.remove('active')
+			//preloader
+				function preloader() {
+					var loaderWrapper = document.querySelector('.loader__wrapper');
+					const today = new Date();
+					let h = today.getHours();
+					if (!localStorage.getItem('entry')) {
+						loaderWrapper.classList.add('active')
+						setTimeout(() => {
+							loaderWrapper.classList.remove('active')
 
-		}, 2000)
+							localStorage.setItem('entry', h)
+						}, 2000)
+					}
+					if (!localStorage.getItem('entry') == h) {
+						loaderWrapper.classList.add('active')
+						setTimeout(() => {
+							loaderWrapper.classList.remove('active')
+
+							localStorage.setItem('entry', h)
+						}, 2000)
+					}
+
+				}
+				preloader();
 	</script>
