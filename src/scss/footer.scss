@@ -23,14 +23,14 @@
 	.footer {
 		width: 100%;
 		.footer__container {
-			color: $VeryLightGray;
+			color: gray;
 			border-top: 1px solid $VeryDarkGrayishBlue;
 			padding: 0.5rem;
 			text-align: center;
 			h1 {
 				font-size: 0.7rem;
 				a {
-					color: gray;
+					color: lightgray;
 
 					&:hover {
 						text-decoration: underline;
