@@ -83,7 +83,7 @@ body {
 	background-color: $VeryLightGrayishBlue;
 	}
 }
-
+@import "loader";
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
 	min-height: 100%;
@@ -163,6 +163,37 @@ body {
 
 //
 .dark{
+
+.loader__wrapper {
+	background-color: $VeryDarkDesaturatedBlue;
+
+	.loader__content {
+		.loader__box {
+			.text {
+				color: $LightGrayishBlue;
+			}
+
+			.clock {
+				border: 3px solid $LightGrayishBlue;
+			}
+
+			.clock:after {
+				background-color: $LightGrayishBlue;
+			}
+
+			.clock:before {
+				background-color: $LightGrayishBlue;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
 
 	.header-title {
 		h1 {
@@ -417,6 +448,36 @@ ul.task-control {
 
 
 .light {
+
+
+.loader__wrapper {
+	background-color: $VeryLightGrayishBlue;
+
+	.loader__content {
+		.loader__box {
+			.text {
+				color: $VeryDarkBlue;
+			}
+
+			.clock {
+				border: 3px solid $VeryDarkBlue;
+			}
+
+			.clock:after {
+				background-color: $VeryDarkBlue;
+			}
+
+			.clock:before {
+				background-color: $VeryDarkBlue;
+			}
+		}
+	}
+}
+
+
+
+
+
 
 	
 	.header-title {

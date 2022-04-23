@@ -1,0 +1,21 @@
+<div class="loader__wrapper">
+	<div class="loader__content">
+		<div class="loader__box">
+			<div class="clock"></div>
+			<div class="text">
+			<span>
+				Task Manager
+			</span>	
+			</div>
+		</div>
+	</div>
+</div>
+	<script>
+		//preloader
+		var loaderWrapper = document.querySelector('.loader__wrapper');
+		loaderWrapper.classList.add('active')
+		setTimeout(() => {
+			loaderWrapper.classList.remove('active')
+
+		}, 2000)
+	</script>
