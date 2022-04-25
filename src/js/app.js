@@ -1004,7 +1004,7 @@ function showMeWeek (){
 	const weekPercentage =()=>{
 		const today = new Date();
 		let h = today.getHours();
-		let w = today.getDay();
+		let w = today.getDay()-1;
 		return (100*((w*24)+h))/168
 	}
 	const weekCounter = document.querySelector('.week-counter')
@@ -1058,7 +1058,6 @@ function showMeYear(){
 		var result = getWeekNumber(new Date());
 		return (result[1]*100)/52
 	}
-	console.log('yearPercentage()', yearPercentage())
 	const yearCounter = document.querySelector('.year-counter');
 	const year = document.querySelector('.year')
 	yearCounter.innerHTML= `
@@ -1081,7 +1080,6 @@ function showMeLife(){
 	lifeCounter.innerHTML=`
 	Life: ${Math.floor(lifePercentage())}%`
 	life.style.width = lifePercentage()+'%'
-	console.log('lifePercentage()', lifePercentage())
 	setTimeout(showMeMonth, 10000000)
 }
 showMeLife();
