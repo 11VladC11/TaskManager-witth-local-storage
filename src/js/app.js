@@ -205,7 +205,7 @@ if (screen.width > 1020) {
 
 }
 else if (screen.width > 10) {
-	taskFormInput.innerHTML += `<input type="text" name="name" id="task-input" placeholder="e.g. go to gym" autocomplete="off" maxlength="27"> <button type="submit" class="create-task">Create</button>`
+	taskFormInput.innerHTML += `<input type="text" name="name" id="task-input" placeholder="e.g. go to gym" autocomplete="off" maxlength="24"> <button type="submit" class="create-task">Create</button>`
 }
 
 
