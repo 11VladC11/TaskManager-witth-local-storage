@@ -196,7 +196,17 @@ import "./libs/dynamic_adapt.js";
 						
 
 	
+const taskFormInput = document.querySelector('.task-form')
+if (screen.width > 1020) {
+	taskFormInput.innerHTML += `<input type="text" name="name" id="task-input" placeholder="e.g. go to gym" autocomplete="off" maxlength="50"> <button type="submit" class="create-task">Create</button>`
+}else if (screen.width > 424){
 
+    	taskFormInput.innerHTML += `<input type="text" name="name" id="task-input" placeholder="e.g. go to gym" autocomplete="off" maxlength="40"> <button type="submit" class="create-task">Create</button>`
+
+}
+else if (screen.width > 10) {
+	taskFormInput.innerHTML += `<input type="text" name="name" id="task-input" placeholder="e.g. go to gym" autocomplete="off" maxlength="27"> <button type="submit" class="create-task">Create</button>`
+}
 
 
 if(!localStorage.getItem('todoItemsTut')){
